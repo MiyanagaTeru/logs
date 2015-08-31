@@ -1,0 +1,56 @@
+learn yeoman with its documents http://yeoman.io/codelab/index.html
+
+issues: 
+	- step 9. when grunt serve:dist, the browser returns 
+Failed to load resource: net::ERR_CONNECTION_REFUSED  http://localhost:35729/livereload.js?snipver=1
+    But it's ok to do grunt serve only. need investigation.    
+
+
+
+solved issues:
+-Q: The bootstrap.css is not working
+-A: open bower.json, change       "bootstrap": "^3.2.0" to  "bootstrap": "3.3.4" . run  bower install again to get new bootstrap.
+	the reason is bootstrap 3.3.5 doesn't work. refer http://stackoverflow.com/a/30953464/5277542
+
+-Q: $grunt test
+		Warning: Task "karma" not found. Use --force to continue.
+
+		Aborted due to warnings.
+-A: npm install grunt-karma --save-dev
+
+-Q: $grunt test
+	Running "karma:unit" (karma) task
+	WARN [plugin]: Cannot find plugin "karma-phantomjs-launcher".
+	  Did you forget to install it ?
+	  npm install karma-phantomjs-launcher --save-dev
+	WARN [plugin]: Cannot find plugin "karma-jasmine".
+	  Did you forget to install it ?
+	  npm install karma-jasmine --save-dev
+	Warning: No provider for "framework:jasmine"! (Resolving: framework:jasmine) Use --force to continue.
+
+	Aborted due to warnings.
+-A: $npm install karma-phantomjs-launcher karma-jasmine --save-dev
+
+-Q: I want to use Chrome as the develop browser
+-A: 1. open karma.conf.js and change     
+	browsers: [
+	      "PhantomJS"
+	],
+
+	to 
+
+	browsers: [
+      "Chrome"
+    ],
+ 	2. (if miss this step you wil get WARN [launcher]: Can not load "Chrome", it is not registered!)
+ 		$npm install karma-chrome-launcher --save-dev
+ 		open karma.conf.js and add  "karma-chrome-launcher" to plugins array, making it like 
+ 		    plugins: [
+		      "karma-phantomjs-launcher",
+		      "karma-jasmine",
+		      "karma-chrome-launcher"
+		    ],
+
+
+
+

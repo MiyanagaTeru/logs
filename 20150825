@@ -1,0 +1,12 @@
+Setting up develop environment
+	-Git
+	-Gradle
+	-Virtual Box. for holding virtual machines
+	-Vagrant. for building virtual machines
+	-JDK. Java
+	-grunt. angular testing
+reading about Git branching model: http://nvie.com/posts/a-successful-git-branching-model/
+
+Reading existing codes in ADP-Microsite-Admin-UI repo.
+
+Finish watching angular videos at https://egghead.io/playlists/new-to-angular-start-here?order=asc&page=1

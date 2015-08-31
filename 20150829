@@ -1,0 +1,7 @@
+When I update my $scope, why the page is not changed?
+For binding, or the $watch() method, to execute the variable change must happen within the context of an AngularJS $digest(). Angular automatically runs $digest() whenever user interaction takes places which affects the $scope. However, the $digest() will not occur without user interaction. When retrieving, or changing, data asynchronously, the $digest() will not be triggered, the bindings will not update, and the $watch() method never fires.
+---http://www.jeffryhouser.com/index.cfm/2014/6/2/How-do-I-run-code-when-a-variable-changes-with-AngularJS
+
+
+
+meeting with API team:
